@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Levra Frontend
+
+Natural, human-friendly interface for streaming payments on Bitcoin Cash.
+
+## What is this?
+
+This is the web app for Levra. It lets you create and manage payment streams without dealing with complex blockchain stuff. Just connect your wallet and start streaming.
+
+## Features
+
+- **Create Streams** - Set up payroll, subscriptions, escrow, or invoices
+- **Manage Streams** - View, pause, resume, or claim your streams
+- **Real-time Updates** - See your streams update as blocks are mined
+- **Clean Design** - Simple, intuitive interface that just works
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+frontend/
+├── app/
+│   ├── components/          # Reusable UI components
+│   │   ├── Header.tsx
+│   │   ├── StreamCard.tsx
+│   │   ├── StreamTypeSelector.tsx
+│   │   └── CreateStreamForm.tsx
+│   ├── stream/[id]/        # Stream detail page
+│   ├── docs/               # Documentation page
+│   ├── page.tsx            # Home page
+│   └── layout.tsx          # Root layout
+├── hooks/                  # React hooks
+│   ├── useWallet.ts        # Wallet connection
+│   └── useStreams.ts       # Stream management
+├── lib/                    # Utilities
+│   ├── types.ts            # TypeScript types
+│   └── streamUtils.ts      # Helper functions
+└── public/                 # Static assets
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **React 19** - UI library
 
-To learn more about Next.js, take a look at the following resources:
+## Design Philosophy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This frontend is built to feel natural and human. No AI-generated corporate speak. Just clear, simple language that explains what's happening.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Key Principles
 
-## Deploy on Vercel
+1. **Simple Language** - We say "money flows" not "liquidity streaming protocol"
+2. **Clear Actions** - Buttons say what they do: "Claim Now", "Pause Stream"
+3. **Visual Feedback** - Progress bars, colors, and animations show what's happening
+4. **No Jargon** - We explain blockchain concepts in plain English
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Integration with Contracts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The frontend connects to the Levra contracts in `../contracts/`. Key integrations:
+
+- **StreamController** - Create and manage streams
+- **RateEngine** - Calculate claimable amounts
+- **ConditionEngine** - Check stream conditions
+- **LoopRenewal** - Handle stream iterations
+- **SafetyModule** - Emergency overrides
+
+## Wallet Support
+
+Currently supports:
+- CashConnect (planned)
+- Paytaca (planned)
+- Electron Cash (planned)
+
+## Development
+
+```bash
+# Run dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
+
+## Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_BCH_NETWORK=mainnet
+NEXT_PUBLIC_API_URL=https://api.lumina.cash
+```
+
+## Contributing
+
+Keep it simple. Keep it human. No unnecessary complexity.
+
+## License
+
+MIT
