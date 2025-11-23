@@ -1,6 +1,4 @@
-# Levra Frontend
-
-Natural, human-friendly interface for streaming payments on Bitcoin Cash.
+# Levra 
 
 ## What is this?
 
@@ -107,10 +105,6 @@ Create a `.env.local` file:
 NEXT_PUBLIC_BCH_NETWORK=mainnet
 NEXT_PUBLIC_API_URL=https://api.lumina.cash
 ```
-
-## Contributing
-
-Keep it simple. Keep it human. No unnecessary complexity.
 
 ## License
 
