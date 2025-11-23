@@ -7,15 +7,7 @@ export default function Docs() {
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center">
-                <span className="text-white text-xl font-bold">L</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-semibold text-gray-900">Levra</h1>
-                <p className="text-xs text-gray-500">Documentation</p>
-              </div>
-            </Link>
+            <div className="text-sm text-gray-500">Documentation</div>
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Back to App
             </Link>

@@ -11,16 +11,13 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center">
-                <span className="text-white text-xl font-bold">L</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-semibold text-gray-900">Levra</h1>
-                <p className="text-xs text-gray-500">Money that flows</p>
-              </div>
+            <Link href="/" className="text-xl font-bold text-gray-900 hover:text-emerald-600 transition-colors">
+              Levra
             </Link>
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                Home
+              </Link>
               <Link href="/stats" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                 Stats
               </Link>
