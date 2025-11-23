@@ -1,3 +1,6 @@
+// Stream type categories
+export type StreamType = 'payroll' | 'subscription' | 'escrow' | 'drip' | 'custom';
+
 // Matches StreamUTXO from contracts
 export interface Stream {
   id: string;
